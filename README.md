@@ -3,6 +3,14 @@ KTNG EAI 연계 공통 모듈
 
 MDM 시스템이 MISDB / KTG 계정 DBLINK걸어서 데이터를 가져오거나 입력한다고 가정하여 설명
 
+CASE 0) 
+
+- DB LINK 된 테이블 데이터 입력
+
+    INSERT INTO TABLE_A@DL_MISDB_KTG VALUES (...)
+    
+>> MDM 시스템에서 REST 개발
+
 CASE 1) 
 - 단순조회 
 
@@ -25,18 +33,13 @@ CASE 3)
 - 시스템 내 다수의 쿼리에서 DB Link된 테이블을 이용 
  
     SELECT * FROM 
-    TABLE_A@DL_MISDB_KTG A, 
+    TABLE_A A, 
     TABLE_B@DL_MISDB_KTG B 
     WHERE A.KEY = B.KEY
 
 >> MDM 시스템에서 Interface Table을 생성 MISDB에서 REST 개발
 
-CASE 4) 
-- DB LINK 된 테이블 데이터 입력
 
-    INSERT INTO TABLE_A@DL_MISDB_KTG VALUES (...)
-    
->> MDM 시스템에서 REST 개발
 
 예외사항) NEAR REAL TIME DB TO DB
 : REST가 기술적으로 불가능한 시스템 ( 패키지 / Old Language / Old Platform )
