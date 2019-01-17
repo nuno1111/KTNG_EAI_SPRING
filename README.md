@@ -7,13 +7,13 @@ MDM 시스템이 MISDB / KTG 계정 DBLINK걸어서 데이터를 가져오거나
 
     INSERT INTO TABLE_A@DL_MISDB_KTG VALUES (...)
     
-##### 적용방안 : MDM 시스템에서 REST 개발
+##### 적용방안 : MDM 시스템에서 REST 입력/수정 개발
 
 ### CASE 1) 단순조회 
 
     SELECT * FROM TABLE_A@DL_MISDB_KTG
 
-##### 적용방안 : MDM 시스템에서 REST 개발
+##### 적용방안 : MDM 시스템에서 REST 조회 개발
 
 ### CASE 2) DL 테이블끼리 단순 JOIN 조회
 
@@ -31,7 +31,7 @@ MDM 시스템이 MISDB / KTG 계정 DBLINK걸어서 데이터를 가져오거나
     TABLE_B@DL_MISDB_KTG B 
     WHERE A.KEY = B.KEY
 
-##### 적용방안 : MDM 시스템에서 Interface Table을 생성 MISDB에서 REST 개발
+##### 적용방안 : MDM 시스템에서 Interface Table을 생성하고, MISDB에서 DB Link된 테이블의 REST 입력/수정 개발
 
 ### 예외사항) NEAR REAL TIME DB TO DB
 ##### 적용방안 : REST가 기술적으로 불가능한 시스템 ( 패키지 / Old Language / Old Platform )
