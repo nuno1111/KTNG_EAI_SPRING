@@ -1,0 +1,2 @@
+# KTNG_EAI_SPRING
+KTNG EAI 연계 공통 모듈
