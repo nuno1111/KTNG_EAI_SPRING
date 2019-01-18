@@ -13,7 +13,7 @@ public class EAIMessageVo {
 	
 	@JsonProperty("HEADER") 
 	private Header header;
-	
+	 
 	@JsonProperty("BODY")
 	private String body;
 
