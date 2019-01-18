@@ -46,8 +46,8 @@ public class AppTest
      */
     public void testApp()
     {
-    	interfaceSingular();
-//    	interfacePlural();
+    	interfaceSingular(); // 단수건 REST 송수신 테스트
+//    	interfacePlural();   // 복수건 REST 송수신 테스트
 		
         assertTrue( true );
     }
