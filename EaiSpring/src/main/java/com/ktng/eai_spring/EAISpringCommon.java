@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ktng.eai_spring.model.Data;
 import com.ktng.eai_spring.model.EAIMessageVo;
 import com.ktng.eai_spring.model.Header;
 
@@ -22,7 +23,7 @@ import com.ktng.eai_spring.model.Header;
 
 public class EAISpringCommon {
 
-	public static String callInterface(String url, String ifId, String targetSystemCode ,String body) throws JsonProcessingException
+	public static String callInterface(String url, String ifId, String targetSystemCode ,Object dataObject) throws JsonProcessingException
 	{
 		
 		RestTemplate rt = new RestTemplate();
@@ -34,33 +35,37 @@ public class EAISpringCommon {
 		Header header = new Header();
 		header.setIfId(ifId);
 		header.setTargetSystemCode(targetSystemCode);
+		
+		Data data = new Data();
+		data.setData(dataObject);
 						
 		EAIMessageVo messageVO = new EAIMessageVo();		
-		messageVO.setHeader(header);
-		messageVO.setBody(body);
+		messageVO.setHeader(header);		
 
 		String messageVOJson = "";
 		String result = "";
 		
 		try {
+			String dataVOJson = objectMapper.writeValueAsString(data);			
+			messageVO.setBody(dataVOJson);
 			messageVOJson = objectMapper.writeValueAsString(messageVO);		
 		} catch (JsonProcessingException e) {
 			throw e;
 		}		
 		
-		if(body != null) {
-			HttpHeaders headers = new HttpHeaders();
-			headers.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
-			headers.add(HttpHeaders.ACCEPT_CHARSET, StandardCharsets.UTF_8.name());
-			headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
+		headers.add(HttpHeaders.ACCEPT_CHARSET, StandardCharsets.UTF_8.name());
+		headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
-			HttpEntity entity = new HttpEntity(messageVOJson, headers);
-			
-			result = rt.postForObject(
-					url,
-					entity,
-					String.class);
-		}
+		HttpEntity entity = new HttpEntity(messageVOJson, headers);
+		
+		result = rt.postForObject(
+				url,
+				entity,
+				String.class);
+		
 		System.out.println("messageVOJson : " + messageVOJson);
 
 		return result;		

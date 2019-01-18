@@ -1,6 +1,6 @@
 package com.ktng.eai_spring.model;
 
-public class DATA
+public class InputVO
 {
     private String PARAM;
     private String PARAM1;

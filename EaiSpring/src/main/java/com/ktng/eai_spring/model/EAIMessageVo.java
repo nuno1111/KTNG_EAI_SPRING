@@ -31,6 +31,9 @@ public class EAIMessageVo {
 
 	public void setBody(String body) {
 		this.body = body;
-	}	
+	}
+	
+	
+
 
 }
