@@ -61,6 +61,8 @@ public class EAISpringCommon {
 
 		HttpEntity entity = new HttpEntity(messageVOJson, headers);
 		
+		url = url + "/" + ifId;
+		
 		result = rt.postForObject(
 				url,
 				entity,
