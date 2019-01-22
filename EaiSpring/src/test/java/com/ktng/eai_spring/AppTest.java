@@ -59,9 +59,9 @@ public class AppTest
     	ObjectMapper objectMapper = new ObjectMapper();
     	
     	// EAI Config 설정
-		String url = "http://10.102.6.62:9999/account"; // EAI 호출 URL 별도 Properties 관리 필요
-		String ifId = "MDM_MISDB_QRSRS_001"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
-		String targetSystemCode = "MIS"; // EAI 호출 TargetSystem 별도 Properties 관리 필요
+		String url = "http://10.102.6.62:9999/account"; // EAI 호출 URL, 별도 Properties 관리 필요
+		String ifId = "MDM_MISDB_QRSRS_001"; // EAI 호출 인터페이스 ID, 별도 Properties 관리 필요
+		//		String targetSystemCode = "MIS"; // (생략가능) EAI 호출 TargetSystem, 별도 Properties 관리 필요
 		
 		// EAI Input Data 및 Select Parameter설정
 		// InputVO클래스(VO)는 임의로 생성한것이고 기존 사용중이신 VO를 쓰시면 됩니다.
