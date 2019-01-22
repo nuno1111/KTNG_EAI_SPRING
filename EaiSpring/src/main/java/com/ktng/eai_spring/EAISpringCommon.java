@@ -73,4 +73,9 @@ public class EAISpringCommon {
 		return result;		
 	}	
 	
+	public static String callInterface(String url, String ifId, Object dataObject) throws JsonProcessingException
+	{
+		return callInterface(url,ifId,"",dataObject);
+	}
+	
 }
