@@ -5,7 +5,7 @@ KTNG EAI 연계 공통 모듈
 
 - REPOSITORY : KTNG Nexus 사용
 
-### POM.XML 셋팅 : 
+#### POM.XML 셋팅 : 
 
     <dependency>
         <groupId>org.springframework</groupId>
