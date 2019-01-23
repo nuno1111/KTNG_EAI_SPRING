@@ -4,7 +4,8 @@ KTNG EAI 연계 공통 모듈
 ## EaiSpring : 전자정부프레임워크(Spring)를 사용하는 경우 샘플
 
 - REPOSITORY : KTNG Nexus 사용
-- POM.XML 셋팅 : 
+
+### POM.XML 셋팅 : 
 
     <dependency>
         <groupId>org.springframework</groupId>
