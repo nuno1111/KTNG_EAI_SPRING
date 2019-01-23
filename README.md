@@ -1,6 +1,36 @@
 # KTNG_EAI_SPRING
 KTNG EAI 연계 공통 모듈
 
+## EaiSpring : 전자정부프레임워크(Spring)를 사용하는 경우 샘플
+
+- REPOSITORY : KTNG Nexus 사용
+- POM.XML 셋팅 : 
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.maven.artifact.version}</version>
+    </dependency>
+	
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.9.8</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.ktng</groupId>
+	    <artifactId>eai-spring</artifactId>
+	    <version>1.0</version>  
+	</dependency>
+
+## EaiBasic : 일반 Java 기본 API 사용한 샘플
+
+- json-20160212.jar IMPORT 필요
+
+
+# DBLINK 제거 및 개선안
+
 MDM 시스템이 MISDB / KTG 계정 DBLINK걸어서 데이터를 가져오거나 입력한다고 가정하여 설명
 
 ### CASE 0) DB LINK 된 테이블 데이터 입력/수정
