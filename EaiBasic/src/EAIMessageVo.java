@@ -6,7 +6,6 @@ public class EAIMessageVo {
 	
 	private String IF_ID;
 	private String IF_TRC_ID;
-	private String TARGET_SYSTEM_CODE;
 	private String ADDITIONAL_INFO;
 	private String RST_CD;
 	private String RST_MSG;
@@ -21,14 +20,21 @@ public class EAIMessageVo {
 		JSONObject responseJsonObject = new JSONObject(responseData);
 		
 		JSONObject responseHeaderJsonObject = responseJsonObject.getJSONObject("HEADER");
+
+		// null 처리 추가
+		String IF_ID = responseHeaderJsonObject.has("IF_ID") ? responseHeaderJsonObject.get("IF_ID").toString() : null;
+		String IF_TRC_ID = responseHeaderJsonObject.has("IF_TRC_ID") ? responseHeaderJsonObject.get("IF_TRC_ID").toString() : null;
+		String ADDITIONAL_INFO = responseHeaderJsonObject.has("ADDITIONAL_INFO") ? responseHeaderJsonObject.get("ADDITIONAL_INFO").toString() : null;
+		String RST_CD = responseHeaderJsonObject.has("RST_CD") ? responseHeaderJsonObject.get("RST_CD").toString() : null;
+		String RST_MSG = responseHeaderJsonObject.has("RST_MSG") ? responseHeaderJsonObject.get("RST_MSG").toString() : null;
+		String BODY = responseJsonObject.has("BODY") ? responseJsonObject.get("BODY").toString() : null;
 		
-		setIF_ID(responseHeaderJsonObject.get("IF_ID").toString());
-		setIF_TRC_ID(responseHeaderJsonObject.get("IF_TRC_ID").toString());
-		setTARGET_SYSTEM_CODE(responseHeaderJsonObject.get("TARGET_SYSTEM_CODE").toString());
-		setADDITIONAL_INFO(responseHeaderJsonObject.get("ADDITIONAL_INFO").toString());
-		setRST_CD(responseHeaderJsonObject.get("RST_CD").toString());
-		setRST_MSG(responseHeaderJsonObject.get("RST_MSG").toString());
-		setBODY(responseJsonObject.get("BODY").toString());
+		setIF_ID(IF_ID);
+		setIF_TRC_ID(IF_TRC_ID);
+		setADDITIONAL_INFO(ADDITIONAL_INFO);
+		setRST_CD(RST_CD);
+		setRST_MSG(RST_MSG);
+		setBODY(BODY);
 	}
 	
 	public String getEAIRequestData() {
@@ -37,7 +43,6 @@ public class EAIMessageVo {
 		JSONObject headerJsonObject = new JSONObject();
 		headerJsonObject.put("IF_ID", getIF_ID());
 		headerJsonObject.put("IF_TRC_ID", getIF_TRC_ID());
-		headerJsonObject.put("TARGET_SYSTEM_CODE", getTARGET_SYSTEM_CODE());
 		headerJsonObject.put("ADDITIONAL_INFO", getADDITIONAL_INFO());
 		headerJsonObject.put("RST_CD", getRST_CD());
 		headerJsonObject.put("RST_MSG", getRST_MSG());
@@ -68,12 +73,6 @@ public class EAIMessageVo {
 		if (!iF_TRC_ID.trim().equals("")) {
 			IF_TRC_ID = iF_TRC_ID;
 		}
-	}
-	public String getTARGET_SYSTEM_CODE() {
-		return TARGET_SYSTEM_CODE;
-	}
-	public void setTARGET_SYSTEM_CODE(String tARGET_SYSTEM_CODE) {
-		TARGET_SYSTEM_CODE = tARGET_SYSTEM_CODE;
 	}
 	public String getADDITIONAL_INFO() {
 		return ADDITIONAL_INFO;

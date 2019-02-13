@@ -12,10 +12,17 @@ public class Sample {
 		
 		EAIMessageVo requestVo = new EAIMessageVo();
 		
+		/*
+		 * test url
+		 * case 1: http://EAIDEV:7630/SRC/SRD_SRCTRG_001
+		 * case 2: http://EAIDEV:7630/SRC/SRD_SRCTRG_002
+		 * case 3: http://EAIDEV:7630/SRC/DRD_SRCTRG_003
+		 */
+		
 		// EAI Config 설정
-		String strUrl = "http://10.102.6.62:9999/account"; // EAI 호출 URL 별도 Properties 관리 필요
-		String ifId = "MDM_MISDB_QRSRS_002"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
-		String targetSystemCode = "MIS"; // (생략가능)EAI 호출 TargetSystem 별도 Properties 관리 필요
+		String strUrl = "http://210.100.22.27:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
+		String ifId = "SRD_SRCTRG_001"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
+//		String targetSystemCode = "TRG"; // (생략가능)EAI 호출 TargetSystem 별도 Properties 관리 필요
 		
 		
 		// EAI 헤더 세팅
@@ -23,7 +30,6 @@ public class Sample {
 		// 생략 가능. 생략 시 java uuid의 랜덤함수를 호출하여 설정
 		// 업무의 Unique id를 사용할 경우 셋팅하면 EAI에서 조회 가능
 		// requestVo.setIF_TRC_ID(""); 
-		requestVo.setTARGET_SYSTEM_CODE(targetSystemCode);
 		requestVo.setADDITIONAL_INFO("");
 		requestVo.setRST_CD("");
 		requestVo.setRST_MSG("");
@@ -83,8 +89,7 @@ public class Sample {
 			
 			System.out.println("Response IF_ID = " + reponseVo.getIF_ID());
 			System.out.println("Response IF_TRC_ID = " + reponseVo.getIF_TRC_ID());
-			System.out.println("Response TARGET_SYSTEM_CODE = " + reponseVo.getTARGET_SYSTEM_CODE());
-			System.out.println("Response ADDITIONAL_INFO = " + reponseVo.getADDITIONAL_INFO());
+			System.out.println("Response ADDITIONAL_INFO = " + reponseVo.getADDITIONAL_INFO());//생략가능
 			System.out.println("Response RST_CD = " + reponseVo.getRST_CD());
 			System.out.println("Response RST_MSG = " + reponseVo.getRST_MSG());
 			

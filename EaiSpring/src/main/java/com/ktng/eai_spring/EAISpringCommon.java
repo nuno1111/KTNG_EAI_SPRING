@@ -23,7 +23,7 @@ import com.ktng.eai_spring.model.Header;
 
 public class EAISpringCommon {
 
-	public static String callInterface(String url, String ifId, String targetSystemCode ,Object dataObject) throws JsonProcessingException
+	public static String callInterface(String url, String ifId, Object dataObject) throws JsonProcessingException
 	{
 		
 		RestTemplate rt = new RestTemplate();
@@ -34,7 +34,7 @@ public class EAISpringCommon {
 		
 		Header header = new Header();
 		header.setIfId(ifId);
-		header.setTargetSystemCode(targetSystemCode);
+//		header.setTargetSystemCode(targetSystemCode);
 		
 		Data data = new Data();
 		data.setData(dataObject);
@@ -72,10 +72,5 @@ public class EAISpringCommon {
 
 		return result;		
 	}	
-	
-	public static String callInterface(String url, String ifId, Object dataObject) throws JsonProcessingException
-	{
-		return callInterface(url,ifId,"",dataObject);
-	}
 	
 }

@@ -19,9 +19,6 @@ public class Header
     @JsonProperty("IF_TRC_ID")
 	private String ifTrcId;
     
-    @JsonProperty("TARGET_SYSTEM_CODE")
-	private String targetSystemCode;
-    
     @JsonProperty("ADDITIONAL_INFO")
 	private String additionalInfo;
     
@@ -50,15 +47,7 @@ public class Header
 
 	public void setIfTrcId(String ifTrcId) {
 		this.ifTrcId = ifTrcId;
-	}
-
-	public String getTargetSystemCode() {
-		return targetSystemCode;
-	}
-
-	public void setTargetSystemCode(String targetSystemCode) {
-		this.targetSystemCode = targetSystemCode;
-	}
+	}	
 
 	public String getAdditionalInfo() {
 		return additionalInfo;
