@@ -61,10 +61,10 @@ public class AppTest
     	// EAI Config 설정
     	String url = "http://210.100.22.27:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
 		String ifId = "SRD_SRCTRG_001"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
-//		String targetSystemCode = "MIS"; // (생략가능)EAI 호출 TargetSystem, 별도 Properties 관리 필요
+//		String additionalInfo = "I"; // 비지니스 프로세스 상 필요한 경우에만 EAI 팀과 협의하여 사용 
 		
 		// EAI Input Data 및 Select Parameter설정
-		// InputVO클래스(VO)는 임의로 생성한것이고 기존 사용중이신 VO를 쓰시면 됩니다.
+		// InputVO클래스(VO)는 임의로 생성한것이고 기존 사용중이신 VO나 MAP를 쓰시면 됩니다.
 		
 		// 2. 1건의 Input Data 혹은 조회 Parameter 		
 		InputVO input1 = new InputVO();
@@ -79,6 +79,7 @@ public class AppTest
 			
 			// EAI로 REST 호출 결과 수신
 			result = EAISpringCommon.callInterface(url, ifId, input1);
+//			result = EAISpringCommon.callInterface(url, ifId, additionalInfo, input1); // additionalInfo 가 있는 경우
 			
 			
 		} catch (JsonProcessingException e) {
@@ -126,7 +127,7 @@ public class AppTest
     	// EAI Config 설정
     	String url = "http://210.100.22.27:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
 		String ifId = "SRD_SRCTRG_002"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
-//		String targetSystemCode = "MIS"; // (생략가능)EAI 호출 TargetSystem 별도 Properties 관리 필요
+		String additionalInfo = "I"; // 비지니스 프로세스 상 필요한 경우에만 EAI 팀과 협의하여 사용 
 		
 		// EAI Input Data 및 Select Parameter설정
 		// InputVO클래스(VO)는 임의로 생성한것이고 기존 사용중이신 VO를 쓰시면 됩니다.
@@ -152,8 +153,9 @@ public class AppTest
 		try {
 			
 			// EAI로 REST 호출 결과 수신
-			result = EAISpringCommon.callInterface(url, ifId, listVO);
-			
+//			result = EAISpringCommon.callInterface(url, ifId, listVO);
+			result = EAISpringCommon.callInterface(url, ifId, additionalInfo, input1); // additionalInfo 가 있는 경우
+
 			
 		} catch (JsonProcessingException e) {
 			// 예외 처리 부분
