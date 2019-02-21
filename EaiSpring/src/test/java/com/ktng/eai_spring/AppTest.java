@@ -62,7 +62,7 @@ public class AppTest
     	String url = "http://210.100.22.27:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
 		String ifId = "SRD_SRCTRG_001"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
 //		String additionalInfo = "I"; // 비지니스 프로세스 상 필요한 경우에만 EAI 팀과 협의하여 사용 
-		
+	
 		// EAI Input Data 및 Select Parameter설정
 		// InputVO클래스(VO)는 임의로 생성한것이고 기존 사용중이신 VO나 MAP를 쓰시면 됩니다.
 		
