@@ -1,5 +1,6 @@
 # KTNG_EAI_SPRING
 KTNG EAI 연계 공통 모듈
+2019-02-01 : 버전 1.01 패치
 
 ## EaiSpring : 전자정부프레임워크(Spring)를 사용하는 경우 샘플
 
@@ -22,7 +23,7 @@ KTNG EAI 연계 공통 모듈
 	<dependency>
 	    <groupId>com.ktng</groupId>
 	    <artifactId>eai-spring</artifactId>
-	    <version>1.0</version>  
+	    <version>1.01</version>  
 	</dependency>
 
 ## EaiBasic : 일반 Java 기본 API 사용한 샘플
