@@ -56,7 +56,7 @@ public class EAISpringCommon {
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
-		headers.add(HttpHeaders.ACCEPT_CHARSET, StandardCharsets.UTF_8.name());
+		headers.add(HttpHeaders.ACCEPT_CHARSET, Charset.forName("UTF-8").name());
 		headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
 		HttpEntity entity = new HttpEntity(messageVOJson, headers);
