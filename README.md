@@ -2,7 +2,8 @@
 KTNG EAI 연계 공통 모듈
 
     [HISTORY]
-    - 2019-02-21 : 버전 1.01 패치
+    - 2019-02-21 : additionalInfo추가 / 버전 1.01 패치
+    - 2019-02-22 : JAVA1.6 에서 가능 / 버전 1.02 패치
 
 ## EaiSpring : 전자정부프레임워크(Spring)를 사용하는 경우 샘플
 
@@ -19,13 +20,13 @@ KTNG EAI 연계 공통 모듈
 	<dependency>
 	    <groupId>com.fasterxml.jackson.core</groupId>
 	    <artifactId>jackson-databind</artifactId>
-	    <version>2.9.8</version>
+	    <version>2.5.1</version>
 	</dependency>
 	
 	<dependency>
 	    <groupId>com.ktng</groupId>
 	    <artifactId>eai-spring</artifactId>
-	    <version>1.01</version>  
+	    <version>1.02</version>  
 	</dependency>
 
 ## EaiBasic : 일반 Java 기본 API 사용한 샘플
