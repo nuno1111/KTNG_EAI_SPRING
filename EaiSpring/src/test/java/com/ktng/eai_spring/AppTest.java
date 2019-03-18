@@ -59,7 +59,7 @@ public class AppTest
     	ObjectMapper objectMapper = new ObjectMapper();
     	
     	// EAI Config 설정
-    	String url = "http://210.100.22.27:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
+    	String url = "http://eaidev.ktng.com:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
 		String ifId = "SRD_SRCTRG_001"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
 //		String additionalInfo = "I"; // 비지니스 프로세스 상 필요한 경우에만 EAI 팀과 협의하여 사용 
 	
@@ -125,7 +125,7 @@ public class AppTest
     	ObjectMapper objectMapper = new ObjectMapper();
     	
     	// EAI Config 설정
-    	String url = "http://210.100.22.27:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
+    	String url = "http://eaidev.ktng.com:7630/SRC"; // EAI 호출 URL 별도 Properties 관리 필요
 		String ifId = "SRD_SRCTRG_002"; // EAI 호출 인터페이스 ID 별도 Properties 관리 필요
 		String additionalInfo = "I"; // 비지니스 프로세스 상 필요한 경우에만 EAI 팀과 협의하여 사용 
 		

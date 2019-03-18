@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -27,8 +28,11 @@ public class EAISpringCommon {
 	{
 		
 		RestTemplate rt = new RestTemplate();
-//		rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-//		rt.getMessageConverters().add(new StringHttpMessageConverter(Charset.forName("UTF-8")));	
+		
+//		[2019-03-18] Header Encoding 제거 소스 추가 시작 by 한동훈
+		StringHttpMessageConverter shm = (StringHttpMessageConverter)rt.getMessageConverters().get(1);		
+		shm.setWriteAcceptCharset(false);
+//		[2019-03-18]  Header Encoding 제거 소스 추가 끝  by 한동훈
 		
 		ObjectMapper objectMapper = new ObjectMapper();
 		
@@ -53,7 +57,6 @@ public class EAISpringCommon {
 			throw e;
 		}		
 		
-		
 		HttpHeaders headers = new HttpHeaders();
 		headers.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
 		headers.add(HttpHeaders.ACCEPT_CHARSET, Charset.forName("UTF-8").name());
@@ -68,7 +71,7 @@ public class EAISpringCommon {
 				entity,
 				String.class);
 		
-		System.out.println("messageVOJson : " + messageVOJson);
+//		System.out.println("messageVOJson : " + messageVOJson);
 
 		return result;		
 	}	
