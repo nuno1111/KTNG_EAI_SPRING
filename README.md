@@ -27,7 +27,7 @@ KTNG EAI 연계 공통 모듈
 	<dependency>
 	    <groupId>com.ktng</groupId>
 	    <artifactId>eai-spring</artifactId>
-	    <version>1.02</version>  
+	    <version>1.03</version>  
 	</dependency>
 
 ## EaiBasic : 일반 Java 기본 API 사용한 샘플
