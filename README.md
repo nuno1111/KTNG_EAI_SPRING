@@ -4,6 +4,7 @@ KTNG EAI 연계 공통 모듈
     [HISTORY]
     - 2019-02-21 : additionalInfo추가 / 버전 1.01 패치
     - 2019-02-22 : JAVA1.6 에서 가능 / 버전 1.02 패치
+    - 2019-03-18 : Header Encoding 제거 / 버전 1.03 패치
 
 ## EaiSpring : 전자정부프레임워크(Spring)를 사용하는 경우 샘플
 
